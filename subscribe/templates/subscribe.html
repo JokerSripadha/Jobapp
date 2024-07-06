@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}JOB DETAIL{% endblock title %}
+{% block content %}
+ <section>
+      <div class="container">
+          <form class="email-form" method="post">
+            {% csrf_token %}
+            {{form}}
+           <button type="submit" class="email-submit">Submit</button>
+          </form>
+    
+    </div>
+    </section>
+{% endblock content  %}

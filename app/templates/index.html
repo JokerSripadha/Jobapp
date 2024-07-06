@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}JOB LISTING {% endblock title %}
+{% block content %}
+<!-- job post lists -->
+    <section>
+      <div class="container">
+        <!-- job post -->
+        {% for x in job_title%}
+        <div class="post">
+          <!-- title and des -->
+          <div class="job-info">
+            <h1 class="job-title">{{x.title}}</h1>
+            <div class="job-des">
+              <div class="location item">
+                <span class="material-icons"> place </span>
+                <p>{{x.location}}</p>
+              </div>
+              <div class="budget item">
+                <span class="material-icons"> attach_money </span>
+                <p>{{x.salary}}</p>
+              </div>
+              <div class="time item">
+                <span class="material-icons"> schedule </span>
+                <p>{{x.type}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="apply">
+              <a href="{%url "jobs_detail" x.id %}">View Job</a>
+            </button>
+          </div>
+        </div>
+        {% endfor %}
+        <!-- job post end-->
+
+        
+       </div>
+    </section>
+
+{% endblock content %}
+ 
