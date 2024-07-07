@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - JobApp1
+name: Build and deploy Python app to Azure Web App - Jobapp1
 
 on:
   push:
@@ -29,12 +29,6 @@ jobs:
       
       - name: Install dependencies
         run: pip install -r requirements.txt
-
-      - name: Collect static files
-        run: python manage.py collectstatic --noinput
-
-
-      
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -70,6 +64,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'JobApp1'
+          app-name: 'Jobapp1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3EC136B050E44FB1881922D7401BC14E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3A2EBA2F65964B66A27D8081BB11DF4F }}
